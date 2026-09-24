@@ -1,1 +1,246 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ff8fb1">
+  <title>For My Princess 💗</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="floating-hearts"></div>
+
+  <main class="game">
+
+    <!-- START SCREEN -->
+    <section class="screen active" id="start">
+      <div class="card">
+
+        <div class="bear">🧸</div>
+
+        <p class="small-title">A little something for my princess</p>
+
+        <h1>For My Princess 💗</h1>
+
+        <p class="intro">
+          I know I can't make the cramps disappear...
+        </p>
+
+        <p class="intro special">
+          But I can take care of you. ♡
+        </p>
+
+        <button class="main-button" onclick="goTo('care')">
+          Start the princess-care mission 💗
+        </button>
+
+        <p class="tiny">
+          Made with love by your favorite person ❤️
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- CARE SCREEN -->
+    <section class="screen" id="care">
+
+      <div class="card">
+
+        <div class="step">
+          MISSION 1 / 4 🌸
+        </div>
+
+        <h2>Princess needs comfort.</h2>
+
+        <p class="question">
+          What should I bring you first?
+        </p>
+
+        <div class="options">
+
+          <button onclick="chooseComfort(this, 2)">
+            ☕ Something warm
+          </button>
+
+          <button onclick="chooseComfort(this, 2)">
+            🍫 Chocolate
+          </button>
+
+          <button onclick="chooseComfort(this, 2)">
+            🧸 A giant blanket
+          </button>
+
+          <button onclick="chooseComfort(this, 3)">
+            🎀 EVERYTHING
+          </button>
+
+        </div>
+
+        <p id="comfort-message" class="message"></p>
+
+        <button id="care-next" class="next-button hidden"
+                onclick="goTo('cuddles')">
+          Continue → 
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- CUDDLE MINI GAME -->
+    <section class="screen" id="cuddles">
+
+      <div class="card">
+
+        <div class="step">
+          MISSION 2 / 4 🤗
+        </div>
+
+        <h2>Cuddle delivery!</h2>
+
+        <p class="question">
+          Tap all the hearts to receive your emergency cuddles.
+        </p>
+
+        <div class="progress">
+          <div id="progress-bar"></div>
+        </div>
+
+        <p id="cuddle-count">
+          0 / 8 cuddles
+        </p>
+
+        <div id="heart-grid"></div>
+
+        <p id="cuddle-message" class="message"></p>
+
+        <button id="cuddle-next"
+                class="next-button hidden"
+                onclick="goTo('needs')">
+          My arms are ready → 
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- NEEDS SCREEN -->
+    <section class="screen" id="needs">
+
+      <div class="card">
+
+        <div class="step">
+          MISSION 3 / 4 🩷
+        </div>
+
+        <h2>What does my princess need?</h2>
+
+        <p class="question">
+          Choose what sounds best right now.
+        </p>
+
+        <div class="options">
+
+          <button onclick="chooseNeed(this, 3)">
+            😴 Sleep & rest
+          </button>
+
+          <button onclick="chooseNeed(this, 3)">
+            💆 A gentle massage
+          </button>
+
+          <button onclick="chooseNeed(this, 3)">
+            🎮 Distraction & fun
+          </button>
+
+          <button onclick="chooseNeed(this, 3)">
+            🤗 Cuddles & reassurance
+          </button>
+
+        </div>
+
+        <div class="note">
+          <span>♡</span>
+          <p id="need-message">
+            Whatever you choose, I'm staying right here.
+          </p>
+        </div>
+
+        <button id="final-next"
+                class="next-button hidden"
+                onclick="goTo('final')">
+          One last thing → 
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- FINAL SCREEN -->
+    <section class="screen" id="final">
+
+      <div class="card final-card">
+
+        <div class="crown">👑</div>
+
+        <p class="small-title">
+          MISSION COMPLETE
+        </p>
+
+        <h2>
+          Princess has been cared for. 💗
+        </h2>
+
+        <p class="final-text">
+
+          I know I can't magically make the pain disappear,
+          but I hope this little game reminds you that you
+          never have to go through a difficult day alone.
+
+        </p>
+
+        <div class="promise">
+
+          <div>🌷</div>
+
+          <p>
+            <strong>I choose you.</strong><br>
+            On easy days, difficult days, sleepy days,
+            annoying days, and every day in between.
+          </p>
+
+        </div>
+
+        <p class="love">
+          I love you, future wifey. ❤️
+        </p>
+
+        <button class="main-button" onclick="restartGame()">
+          Play again ♡
+        </button>
+
+        <p id="score" class="tiny"></p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    made with ♡ just for you
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
+```
 
