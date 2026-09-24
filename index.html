@@ -14,15 +14,21 @@
 
   <main class="game">
 
-    <!-- START SCREEN -->
+    <!-- START -->
+
     <section class="screen active" id="start">
+
       <div class="card">
 
         <div class="bear">🧸</div>
 
-        <p class="small-title">A little something for my princess</p>
+        <p class="small-title">
+          A little something for my princess
+        </p>
 
-        <h1>For My Princess 💗</h1>
+        <h1>
+          For My Princess 💗
+        </h1>
 
         <p class="intro">
           I know I can't make the cramps disappear...
@@ -32,7 +38,9 @@
           But I can take care of you. ♡
         </p>
 
-        <button class="main-button" onclick="goTo('care')">
+        <button
+          class="main-button"
+          onclick="goTo('care')">
           Start the princess-care mission 💗
         </button>
 
@@ -41,10 +49,12 @@
         </p>
 
       </div>
+
     </section>
 
 
-    <!-- CARE SCREEN -->
+    <!-- MISSION 1 -->
+
     <section class="screen" id="care">
 
       <div class="card">
@@ -53,7 +63,9 @@
           MISSION 1 / 4 🌸
         </div>
 
-        <h2>Princess needs comfort.</h2>
+        <h2>
+          Princess needs comfort.
+        </h2>
 
         <p class="question">
           What should I bring you first?
@@ -79,11 +91,16 @@
 
         </div>
 
-        <p id="comfort-message" class="message"></p>
+        <p
+          id="comfort-message"
+          class="message">
+        </p>
 
-        <button id="care-next" class="next-button hidden"
-                onclick="goTo('cuddles')">
-          Continue → 
+        <button
+          id="care-next"
+          class="next-button hidden"
+          onclick="goTo('cuddles')">
+          Continue →
         </button>
 
       </div>
@@ -91,7 +108,8 @@
     </section>
 
 
-    <!-- CUDDLE MINI GAME -->
+    <!-- MISSION 2 -->
+
     <section class="screen" id="cuddles">
 
       <div class="card">
@@ -100,7 +118,9 @@
           MISSION 2 / 4 🤗
         </div>
 
-        <h2>Cuddle delivery!</h2>
+        <h2>
+          Cuddle delivery!
+        </h2>
 
         <p class="question">
           Tap all the hearts to receive your emergency cuddles.
@@ -116,12 +136,16 @@
 
         <div id="heart-grid"></div>
 
-        <p id="cuddle-message" class="message"></p>
+        <p
+          id="cuddle-message"
+          class="message">
+        </p>
 
-        <button id="cuddle-next"
-                class="next-button hidden"
-                onclick="goTo('needs')">
-          My arms are ready → 
+        <button
+          id="cuddle-next"
+          class="next-button hidden"
+          onclick="goTo('needs')">
+          My arms are ready →
         </button>
 
       </div>
@@ -129,7 +153,8 @@
     </section>
 
 
-    <!-- NEEDS SCREEN -->
+    <!-- MISSION 3 -->
+
     <section class="screen" id="needs">
 
       <div class="card">
@@ -138,7 +163,9 @@
           MISSION 3 / 4 🩷
         </div>
 
-        <h2>What does my princess need?</h2>
+        <h2>
+          What does my princess need?
+        </h2>
 
         <p class="question">
           Choose what sounds best right now.
@@ -147,7 +174,7 @@
         <div class="options">
 
           <button onclick="chooseNeed(this, 3)">
-            😴 Sleep & rest
+            😴 Sleep &amp; rest
           </button>
 
           <button onclick="chooseNeed(this, 3)">
@@ -155,26 +182,30 @@
           </button>
 
           <button onclick="chooseNeed(this, 3)">
-            🎮 Distraction & fun
+            🎮 Distraction &amp; fun
           </button>
 
           <button onclick="chooseNeed(this, 3)">
-            🤗 Cuddles & reassurance
+            🤗 Cuddles &amp; reassurance
           </button>
 
         </div>
 
         <div class="note">
+
           <span>♡</span>
+
           <p id="need-message">
             Whatever you choose, I'm staying right here.
           </p>
+
         </div>
 
-        <button id="final-next"
-                class="next-button hidden"
-                onclick="goTo('final')">
-          One last thing → 
+        <button
+          id="final-next"
+          class="next-button hidden"
+          onclick="goTo('final')">
+          One last thing →
         </button>
 
       </div>
@@ -182,12 +213,15 @@
     </section>
 
 
-    <!-- FINAL SCREEN -->
+    <!-- MISSION COMPLETE -->
+
     <section class="screen" id="final">
 
       <div class="card final-card">
 
-        <div class="crown">👑</div>
+        <div class="crown">
+          👑
+        </div>
 
         <p class="small-title">
           MISSION COMPLETE
@@ -198,16 +232,16 @@
         </h2>
 
         <p class="final-text">
-
           I know I can't magically make the pain disappear,
           but I hope this little game reminds you that you
           never have to go through a difficult day alone.
-
         </p>
 
         <div class="promise">
 
-          <div>🌷</div>
+          <div>
+            🌷
+          </div>
 
           <p>
             <strong>I choose you.</strong><br>
@@ -221,11 +255,141 @@
           I love you, future wifey. ❤️
         </p>
 
-        <button class="main-button" onclick="restartGame()">
+        <p class="tiny">
+          But... I have one last surprise for you. 💌
+        </p>
+
+        <button
+          class="main-button"
+          onclick="openLoveLetter()">
+          💌 Open my letter
+        </button>
+
+        <div
+          id="love-letter"
+          class="love-letter hidden">
+
+          <div class="letter-top">
+            💌
+          </div>
+
+          <p class="letter-label">
+            A letter from your future husband
+          </p>
+
+          <h2>
+            To my beautiful Mai ❤️
+          </h2>
+
+          <div class="letter-content">
+
+            <p>
+              Hello my pretty girl, I hope you're feeling okay!
+            </p>
+
+            <p>
+              You told me your period started recently, so I understand
+              that you're probably feeling some stress or feeling uneasy,
+              so I just wanted to make you something to let you know I am
+              always here for you no matter what!
+            </p>
+
+            <p>
+              I wanted to express how truly grateful I am to have you in
+              my life. Ever since we met, I found more purpose in my life.
+              I started enjoying the little things, I had a goal to work
+              towards, and it's to build a happy future with you.
+            </p>
+
+            <p>
+              I know I say this a lot, and I will keep on saying it, but
+              you have the sweetest, kindest and most adorable soul in the
+              entire universe.
+            </p>
+
+            <p>
+              I will forever take care of you and make sure you always
+              feel happy, because your happiness is also my happiness.
+            </p>
+
+            <p>
+              Whenever I see your lovely smile, I think to myself how truly
+              lucky of a man I am to be able to see it every day. But of
+              course it's not luck, it's fate.
+            </p>
+
+            <p>
+              Your smile is so pure, it makes me want to see it forever.
+            </p>
+
+            <p>
+              Oh, I promise I will make you so happy that you'll think
+              you're in a dream. I am so emotional while writing this that
+              I am even crying, that's how serious my love for you is.
+            </p>
+
+            <p>
+              And no matter what happens, my love for you will keep on
+              growing forever.
+            </p>
+
+            <p>
+              So please don't ever worry, don't ever be anxious, don't ever
+              overthink anything. My heart will forever belong to you,
+              no matter what. I promise you from the very bottom of my heart.
+            </p>
+
+            <p>
+              So for now, please enjoy this little game I made you.
+              I hope you like it! It took some time and help from ChatGPT,
+              but I made most of it myself and came up with most of the ideas.
+            </p>
+
+            <p>
+              So, my beautiful Mai, I really love you from the very bottom
+              of my heart. I will take care of your precious heart forever,
+              I promise.
+            </p>
+
+            <p>
+              I will make you happy forever. I will marry you and make the
+              promise to always care for you. That is my job from now on.
+            </p>
+
+            <p>
+              I love you infinitely, and if there is something beyond
+              infinity, my love for you surpasses even that.
+            </p>
+
+            <p>
+              Thank you for opening up my heart again and always showing me
+              true love. You are the best thing that has ever happened in
+              my life. You are my miracle.
+            </p>
+
+            <p class="letter-ending">
+              I love you endlessly! ❤️
+            </p>
+
+            <p class="signature">
+              Your future husband,<br>
+              Ryan ❤️
+            </p>
+
+          </div>
+
+        </div>
+
+        <button
+          class="next-button"
+          onclick="restartGame()">
           Play again ♡
         </button>
 
-        <p id="score" class="tiny"></p>
+        <p
+          id="score"
+          class="tiny">
+        </p>
 
       </div>
 
