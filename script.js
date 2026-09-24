@@ -2,10 +2,6 @@ let score = 0;
 let cuddles = 0;
 let heartGameStarted = false;
 
-/* =========================
-   SCREEN NAVIGATION
-========================= */
-
 function goTo(screenName) {
   document.querySelectorAll(".screen").forEach(screen => {
     screen.classList.remove("active");
@@ -31,12 +27,6 @@ function goTo(screenName) {
   }
 }
 
-
-/* =========================
-   MISSION 1
-   COMFORT
-========================= */
-
 function chooseComfort(button, points) {
   document.querySelectorAll("#care .options button").forEach(btn => {
     btn.classList.remove("selected");
@@ -59,9 +49,8 @@ function chooseComfort(button, points) {
     "EVERYTHING?! Finally, someone understands. 😭💗"
   ];
 
-  const message = document.getElementById("comfort-message");
-
-  message.textContent = messages[index];
+  document.getElementById("comfort-message").textContent =
+    messages[index];
 
   document
     .getElementById("care-next")
@@ -69,12 +58,6 @@ function chooseComfort(button, points) {
 
   createHeartBurst(index === 3 ? 10 : 4);
 }
-
-
-/* =========================
-   MISSION 2
-   CUDDLE GAME
-========================= */
 
 function createCuddles() {
   const grid = document.getElementById("heart-grid");
@@ -100,7 +83,6 @@ function createCuddles() {
     createCuddleHeart(grid, i);
   }
 }
-
 
 function createCuddleHeart(grid, index) {
   const heart = document.createElement("button");
@@ -141,7 +123,6 @@ function createCuddleHeart(grid, index) {
   grid.appendChild(heart);
 }
 
-
 function completeCuddleMission() {
   heartGameStarted = false;
 
@@ -158,12 +139,6 @@ function completeCuddleMission() {
 
   celebrateScreen();
 }
-
-
-/* =========================
-   MISSION 3
-   NEEDS
-========================= */
 
 function chooseNeed(button, points) {
   document.querySelectorAll("#needs .options button").forEach(btn => {
@@ -197,11 +172,6 @@ function chooseNeed(button, points) {
   createHeartBurst(5);
 }
 
-
-/* =========================
-   FINAL SCREEN
-========================= */
-
 function finishGame() {
   const percentage = Math.min(
     100,
@@ -216,10 +186,32 @@ function finishGame() {
   }, 300);
 }
 
+/* LOVE LETTER */
 
-/* =========================
-   RESTART
-========================= */
+function openLoveLetter() {
+  const letter = document.getElementById("love-letter");
+  const button = document.querySelector("#final .main-button");
+
+  if (!letter) {
+    console.error("Love letter element was not found.");
+    return;
+  }
+
+  letter.classList.remove("hidden");
+
+  if (button) {
+    button.classList.add("hidden");
+  }
+
+  createHeartBurst(30);
+
+  setTimeout(() => {
+    letter.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }, 150);
+}
 
 function restartGame() {
   score = 0;
@@ -239,13 +231,19 @@ function restartGame() {
 
   document.getElementById("final-next").classList.add("hidden");
 
+  const letter = document.getElementById("love-letter");
+  const letterButton = document.querySelector("#final .main-button");
+
+  if (letter) {
+    letter.classList.add("hidden");
+  }
+
+  if (letterButton) {
+    letterButton.classList.remove("hidden");
+  }
+
   goTo("start");
 }
-
-
-/* =========================
-   FLOATING HEARTS
-========================= */
 
 function createFloatingHeart() {
   const heart = document.createElement("span");
@@ -282,11 +280,6 @@ function createFloatingHeart() {
   }, 12000);
 }
 
-
-/* =========================
-   HEART BURST
-========================= */
-
 function createHeartBurst(amount) {
   for (let i = 0; i < amount; i++) {
     setTimeout(() => {
@@ -294,11 +287,6 @@ function createHeartBurst(amount) {
     }, i * 70);
   }
 }
-
-
-/* =========================
-   CELEBRATION
-========================= */
 
 function celebrateScreen() {
   const card =
@@ -325,34 +313,10 @@ function celebrateScreen() {
   );
 }
 
-
-/* =========================
-   AUTOMATIC HEARTS
-========================= */
-
 setInterval(() => {
   if (document.visibilityState === "visible") {
     createFloatingHeart();
   }
 }, 900);
 
-
-/* =========================
-   FIRST HEARTS
-========================= */
-
 createHeartBurst(8);
-function openLoveLetter() {
-  const letter = document.getElementById("love-letter");
-
-  if (!letter) return;
-
-  letter.classList.remove("hidden");
-
-  letter.scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
-
-  createHeartBurst(30);
-}
