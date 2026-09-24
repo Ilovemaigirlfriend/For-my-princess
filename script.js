@@ -342,3 +342,17 @@ setInterval(() => {
 ========================= */
 
 createHeartBurst(8);
+function openLoveLetter() {
+  const letter = document.getElementById("love-letter");
+
+  if (!letter) return;
+
+  letter.classList.remove("hidden");
+
+  letter.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+
+  createHeartBurst(30);
+}
