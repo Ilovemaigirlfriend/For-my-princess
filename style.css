@@ -828,3 +828,122 @@ footer {
     align-items: flex-start;
   }
 }
+/* LOVE LETTER */
+
+.love-letter {
+  margin-top: 30px;
+  padding: 30px 25px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffafc,
+      #fff2f7
+    );
+
+  border: 1px solid #f3cbd9;
+
+  border-radius: 25px;
+
+  text-align: left;
+
+  box-shadow:
+    0 15px 35px rgba(142, 55, 91, 0.1);
+
+  animation:
+    letterOpen 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes letterOpen {
+  from {
+    opacity: 0;
+    transform:
+      translateY(25px)
+      scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+.letter-top {
+  text-align: center;
+
+  font-size: 42px;
+
+  margin-bottom: 8px;
+}
+
+.letter-label {
+  margin: 0 0 8px;
+
+  text-align: center;
+
+  color: var(--hot-pink);
+
+  font-size: 11px;
+  font-weight: 900;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.14em;
+}
+
+.love-letter h2 {
+  text-align: center;
+
+  font-size: clamp(27px, 6vw, 38px);
+
+  margin-bottom: 25px;
+}
+
+.letter-content p {
+  color: var(--muted);
+
+  font-size: 15px;
+
+  line-height: 1.75;
+
+  margin: 0 0 18px;
+}
+
+.letter-ending {
+  color: var(--hot-pink) !important;
+
+  font-size: 19px !important;
+
+  font-weight: 900;
+
+  text-align: center;
+
+  margin-top: 28px !important;
+}
+
+.signature {
+  color: var(--dark-pink) !important;
+
+  font-weight: 800;
+
+  text-align: right;
+
+  margin-top: 25px !important;
+
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 480px) {
+
+  .love-letter {
+    padding: 25px 18px;
+  }
+
+  .letter-content p {
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+}
